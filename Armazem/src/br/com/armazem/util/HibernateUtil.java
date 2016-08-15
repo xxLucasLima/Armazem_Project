@@ -17,7 +17,8 @@ public class HibernateUtil {
                 Configuration annotation = new Configuration();
                 annotation.configure();
                 
-                ServiceRegistry serviceRegistry = (ServiceRegistry) new StandardServiceRegistryBuilder()
+                @SuppressWarnings("unused")
+				ServiceRegistry serviceRegistry = (ServiceRegistry) new StandardServiceRegistryBuilder()
                 		.applySettings(annotation.getProperties()).build();
                 sessionFactory = annotation.configure().buildSessionFactory();
 
