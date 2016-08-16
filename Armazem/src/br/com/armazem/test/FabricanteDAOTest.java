@@ -5,20 +5,18 @@ import java.util.List;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.sun.org.apache.bcel.internal.generic.FADD;
-
 import br.com.armazem.dao.FabricanteDAO;
 import br.com.armazem.domain.Fabricante;
 
 public class FabricanteDAOTest {
-	@Ignore
+	
 	@Test
 	public void salvar(){
 		Fabricante fabricante = new Fabricante();
-		fabricante.setDescricao("DESCRI플O");
+		fabricante.setDescricao("DESCRI플O2");
 		
 		Fabricante fabricante2 = new Fabricante();
-		fabricante2.setDescricao("DESCRI플O1");
+		fabricante2.setDescricao("DESCRI플O3");
 		
 		FabricanteDAO fdao = new FabricanteDAO();
 		
@@ -50,17 +48,21 @@ public class FabricanteDAOTest {
 	public void excluir(){
 		FabricanteDAO dao = new FabricanteDAO();
 
-		dao.excluir(1L);
+		Fabricante fabricante = dao.buscarPorCodigo(2L);
+		
+		dao.excluir(fabricante);
+		
 	}
 	
 	@Ignore
 	@Test
 	public void editar(){
-		Fabricante fabricante = new Fabricante();
-		fabricante.setCodigo(3L);
-		fabricante.setDescricao("DESCRICAO EDITADA");
-		
 		FabricanteDAO dao = new FabricanteDAO();
+
+		Fabricante fabricante = dao.buscarPorCodigo(2L);
+		fabricante.setDescricao("DECRI플O EDITADA DE NOVO");
+		
 		dao.editar(fabricante);
+		
 	}
 }
