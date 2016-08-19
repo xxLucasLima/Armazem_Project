@@ -1,8 +1,11 @@
 package br.com.armazem.test;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
+
 
 import br.com.armazem.dao.FabricanteDAO;
 import br.com.armazem.dao.ProdutoDAO;
@@ -13,7 +16,8 @@ public class ProdutoDAOTest {
 	
 	
 	@Test
-	public void inserir(){
+	@Ignore
+	public void salvar(){
 		Fabricante fabricante = new Fabricante();
 		FabricanteDAO dao = new FabricanteDAO();
 		
@@ -26,7 +30,24 @@ public class ProdutoDAOTest {
 		produto.setPreco(new BigDecimal(22.5));
 		produto.setQuantidade(17);
 		
-		pdao.inserir(produto);
+		pdao.salvar(produto);
+		
+	}
+	@Test
+	@Ignore
+	public void buscarPorCodigo(){
+		ProdutoDAO dao = new ProdutoDAO();
+		Produto produto = dao.buscarPorCodigo(18L);
+		
+		System.out.println(produto);
+	}
+	@Test
+	public void listar(){
+		ProdutoDAO dao = new ProdutoDAO();
+		
+		List<Produto> produtos = dao.listar();
+		System.out.println(produtos	);
+		
 		
 	}
 }
