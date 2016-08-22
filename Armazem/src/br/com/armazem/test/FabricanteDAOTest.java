@@ -13,15 +13,19 @@ public class FabricanteDAOTest {
 	@Test
 	public void salvar(){
 		Fabricante fabricante = new Fabricante();
-		fabricante.setDescricao("DESCRI플O2");
+		fabricante.setDescricao("DESCRI플O 1");
 		
 		Fabricante fabricante2 = new Fabricante();
-		fabricante2.setDescricao("DESCRI플O3");
+		fabricante2.setDescricao("DESCRI플O 2");
+		
+		Fabricante fabricante3 = new Fabricante();
+		fabricante3.setDescricao("DESCRI플O 3");
 		
 		FabricanteDAO fdao = new FabricanteDAO();
 		
 		fdao.salvar(fabricante);
 		fdao.salvar(fabricante2);
+		fdao.salvar(fabricante3);
 		
 	}
 	@Test

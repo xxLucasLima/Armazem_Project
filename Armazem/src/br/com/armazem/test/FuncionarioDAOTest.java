@@ -10,7 +10,7 @@ import br.com.armazem.domain.Funcionario;
 
 public class FuncionarioDAOTest {
 
-	@Ignore
+	
 	@Test
 	public void salvar(){
 		Funcionario f1 = new Funcionario();
@@ -23,6 +23,15 @@ public class FuncionarioDAOTest {
 		
 		fdao.salvar(f1);
 		
+		Funcionario f2 = new Funcionario();
+		f1.setCpf("023.564.312-67");
+		f1.setNome("Maria cleide da silva");
+		f1.setSenha("123456");
+		f1.setFuncao("Limpadora de coco");
+		
+		
+		fdao.salvar(f1);
+		fdao.salvar(f2);
 	}
 	@Test
 	@Ignore
@@ -56,6 +65,7 @@ public class FuncionarioDAOTest {
 	
 
 	@Test
+	@Ignore
 	public void editar(){
 		FuncionarioDAO dao = new FuncionarioDAO();
 
