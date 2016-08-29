@@ -16,22 +16,12 @@ public class FuncionarioDAOTest {
 		Funcionario f1 = new Funcionario();
 		f1.setCpf("010.486.314-51");
 		f1.setNome("Lucas Lima Pinheiro Silva");
-		f1.setSenha("123456");
-		f1.setFuncao("Varredor");
+		f1.setSenha("123789");
+		f1.setFuncao("limpador de coco");
 		
 		FuncionarioDAO fdao = new FuncionarioDAO();
 		
 		fdao.salvar(f1);
-		
-		Funcionario f2 = new Funcionario();
-		f1.setCpf("023.564.312-67");
-		f1.setNome("Maria cleide da silva");
-		f1.setSenha("123456");
-		f1.setFuncao("Limpadora de coco");
-		
-		
-		fdao.salvar(f1);
-		fdao.salvar(f2);
 	}
 	@Test
 	@Ignore

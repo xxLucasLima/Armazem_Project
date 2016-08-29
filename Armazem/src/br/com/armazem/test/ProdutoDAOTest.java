@@ -17,9 +17,8 @@ public class ProdutoDAOTest {
 
 	@Test
 	public void salvar(){
-		Fabricante fabricante = new Fabricante();
 		FabricanteDAO dao = new FabricanteDAO();
-		fabricante = dao.buscarPorCodigo(1L);
+		Fabricante fabricante = dao.buscarPorCodigo(1L);
 		
 		Produto produto = new Produto();
 		ProdutoDAO pdao = new ProdutoDAO();
@@ -30,9 +29,8 @@ public class ProdutoDAOTest {
 		produto.setPreco(new BigDecimal(22.5D));
 		produto.setQuantidade(17);
 		
-		Fabricante fabricante2 = new Fabricante();
 		FabricanteDAO dao2 = new FabricanteDAO();
-		fabricante2 = dao2.buscarPorCodigo(2L);
+		Fabricante fabricante2 = dao2.buscarPorCodigo(2L);
 		
 		produto2.setDescricao("Descrição Z");
 		produto2.setFabricante(fabricante2);

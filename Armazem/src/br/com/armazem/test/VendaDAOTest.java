@@ -14,42 +14,31 @@ import br.com.armazem.domain.Venda;
 
 public class VendaDAOTest {
 	
-	@Ignore
+
 	@Test
 	public void salvar(){
 		FuncionarioDAO dao = new FuncionarioDAO();
-		Funcionario funcionario = dao.buscarPorCodigo(4L);
-		
+		Funcionario funcionario = dao.buscarPorCodigo(5L);
 		Venda venda = new Venda();
 		venda.setFuncionario(funcionario);
 		venda.setHorario(new Date());
-		venda.setValor(new BigDecimal(15.56D));
+		venda.setValor(new BigDecimal(15.0D));
 		
 		VendaDAO vdao = new VendaDAO();
-		vdao.salvar(venda);
-		
-		Funcionario funcionario2 = dao.buscarPorCodigo(5L);
-		
-		Venda venda2 = new Venda();
-		venda2.setFuncionario(funcionario2);
-		venda2.setHorario(new Date());
-		venda2.setValor(new BigDecimal(90.00D));
-		
-		vdao.salvar(venda2);
-		
+		vdao.salvar(venda);		
 	}
-	
+	@Ignore
 	@Test
 	public void listar(){
 		VendaDAO dao = new VendaDAO();
 		
-			List<Venda>vendas = dao.listar();
+		List<Venda>vendas = dao.listar();
 			
-			System.out.println(vendas);
+		System.out.println(vendas);
 		
 			
 		}
-	
+	@Ignore
 	@Test
 	public void buscarPorCodigo(){
 		VendaDAO dao = new VendaDAO();
@@ -58,7 +47,7 @@ public class VendaDAOTest {
 		
 		System.out.println(venda);
 	}
-	
+	@Ignore
 	@Test
 	public void excluir(){
 		VendaDAO dao = new VendaDAO();
@@ -66,7 +55,7 @@ public class VendaDAOTest {
 		dao.excluir(venda);
 		
 	}
-	
+	@Ignore
 	@Test
 	public void editar(){
 		FuncionarioDAO dao = new FuncionarioDAO();

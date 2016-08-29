@@ -73,4 +73,11 @@ public class Venda {
 		this.funcionario = funcionario;
 	}
 
+	@Override
+	public String toString() {
+		return "Venda [codigo=" + codigo + ", horario=" + horario + ", valor=" + valor + ", funcionario=" + funcionario
+				+ "]";
+	}
+
+	
 }

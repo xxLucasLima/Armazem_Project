@@ -6,19 +6,19 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.Query;
 
-import br.com.armazem.domain.Venda;
+import br.com.armazem.domain.Item;
 import br.com.armazem.util.HibernateUtil;
 
 @SuppressWarnings("deprecation")
-public class VendaDAO {
+public class ItemDAO {
 
-	public void salvar(Venda venda){
+	public void salvar(Item item){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 
 		try{
 			transacao = sessao.beginTransaction();
-			sessao.save(venda);
+			sessao.save(item);
 			transacao.commit();
 
 		}catch(RuntimeException ex){ 
@@ -31,46 +31,46 @@ public class VendaDAO {
 		}	
 	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public List<Venda> listar(){
+	public List<Item> listar(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		List<Venda> venda = null;
+		List<Item> item = null;
 
 		try{
 			Query consulta = sessao.getNamedQuery("Produto.listar");
-			venda = consulta.list();
+			item = consulta.list();
 
 		}catch(RuntimeException ex){ 
 			throw ex;
 		}finally{
 			sessao.close();
 		}	
-		return venda;
+		return item;
 	}
 	@SuppressWarnings({ "rawtypes" })
-	public Venda buscarPorCodigo(Long codigo){
+	public Item buscarPorCodigo(Long codigo){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Venda venda = null;
+		Item item = null;
 
 		try{
-			Query consulta = sessao.getNamedQuery("Venda.buscarPorCodigo");
+			Query consulta = sessao.getNamedQuery("Produto.buscarPorCodigo");
 			consulta.setLong("codigo", codigo);
 
-			venda = (Venda) consulta.uniqueResult();
+			item = (Item) consulta.uniqueResult();
 
 		}catch(RuntimeException ex){ 
 			throw ex;
 		}finally{
 			sessao.close();
 		}	
-		return venda;
+		return item;
 	}
-	public void excluir (Venda venda){
+	public void excluir (Item item){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 
 		try{
 			transacao = sessao.beginTransaction();
-			sessao.delete(venda);
+			sessao.delete(item);
 			transacao.commit();
 		}catch (RuntimeException ex){
 			if(transacao != null){
@@ -81,14 +81,14 @@ public class VendaDAO {
 			sessao.close();
 		}
 	}
-	public void editar(Venda venda) {
+	public void editar(Item item) {
 
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction transacao = null;
 
 		try {
 			transacao = sessao.beginTransaction();
-			sessao.update(venda);
+			sessao.update(item);
 			transacao.commit();
 		} catch (Exception ex) {
 			if (transacao != null) {
@@ -100,5 +100,6 @@ public class VendaDAO {
 	}
 
 }
+
 
 

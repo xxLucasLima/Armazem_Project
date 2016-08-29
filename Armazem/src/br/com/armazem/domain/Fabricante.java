@@ -22,7 +22,7 @@ public class Fabricante {
 	@Column(name = "fab_codigo")
 	private Long codigo;
 
-	@Column (name="fab_descricao", length = 50)
+	@Column (name="fab_descricao", length = 50, nullable = false)
 	private String descricao;
 
 	public Long getCodigo() {

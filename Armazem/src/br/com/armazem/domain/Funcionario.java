@@ -13,11 +13,9 @@ import javax.persistence.Table;
 @Table(name="tbl_funcionarios")
 @NamedQueries({
 	@NamedQuery(name="Funcionario.listar", query = "SELECT funcionario FROM Funcionario funcionario"),
-	@NamedQuery (name="Funcionario.buscarPorCodigo", query="SELECT funcionario FROM Funcionario funcionario WHERE funcionario.codigo = :codigo")
+	@NamedQuery (name="Funcionario.buscarPorCodigo", query="SELECT funcionario FROM Funcionario funcionario WHERE codigo = :codigo")
 	})
 public class Funcionario {
-	
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
