@@ -5,11 +5,16 @@
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+<ui:insert name="metadata" />
+
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Armazem</title>
 </h:head>
 <h:body>
+	<p:growl id="msgGlobal" sticky="true"/>
+		
 	<p:layout fullPage="true">
 		<p:layoutUnit header="Sistema de Gerenciamento" position="north" resizable="false" closable="false" collapsible="false">
 		</p:layoutUnit>
